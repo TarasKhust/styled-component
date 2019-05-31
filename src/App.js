@@ -1,7 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import styled, { css } from 'styled-components';
-import './App.css';
+import GlobalStyle from './Global';
+
 
 const size = {
 	small: 400,
@@ -96,11 +97,11 @@ function App() {
 					<Heading className='App'>
 						Edit <code>src/App.js</code> and save to reload.
 					</Heading>
-					<DoubleFake>
-						<Fake/>
-					</DoubleFake>
+					<DoubleFake/>
+					<Fake/>
 					<Button type="okay">Save</Button>
 					<CancelButton top={300}>Cancel</CancelButton>
+					<Heading>Heading two</Heading>
 					<a
 							className="App-link"
 							href="https://reactjs.org"
@@ -110,6 +111,7 @@ function App() {
 						Learn React
 					</a>
 				</header>
+				<GlobalStyle/>
 			</AppWrapper>
 	);
 }
