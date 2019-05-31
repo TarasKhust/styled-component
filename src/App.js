@@ -1,7 +1,31 @@
 import React from 'react';
 import logo from './logo.svg';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import './App.css';
+
+const size = {
+  small: 400,
+  med: 960,
+  large: 1140
+}
+
+const above = Object.keys(size).reduce((acc, label) => {
+  acc[label] = (...args) => css`
+    @media (min-width: ${size[label]}px) {
+      ${css(...args)}
+    }
+`
+  return acc;
+}, {})
+
+const below = Object.keys(size).reduce((acc, label) => {
+  acc[label] = (...args) => css`
+    @media (max-width: ${size[label]}px) {
+      ${css(...args)}
+    }
+`
+  return acc;
+}, {})
 
 
 const Fake = ({ className }) => <div className={className}>
@@ -10,6 +34,9 @@ const Fake = ({ className }) => <div className={className}>
 
 const Heading = styled.h1 `
   font-size: 2rem;
+  ${above.med`
+    color: blue
+  `}
 `
 
 const color = "white";
