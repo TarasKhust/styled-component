@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import GlobalStyle from './Global';
 import Header from './layouts/Header';
+import { Button } from './elements';
 
 class App extends Component {
 
@@ -9,6 +10,10 @@ class App extends Component {
 				<>
 					<Header/>
 					<GlobalStyle/>
+					<Button>Click</Button>
+					<Button modifiers='cancel'>Click</Button>
+					<Button modifiers='small'>Click</Button>
+					<Button modifiers={['small', 'cancel']}>Click</Button>
 				</>
 		);
 	}
