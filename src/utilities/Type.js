@@ -1,3 +1,3 @@
 export const serif = `
-	font-family: 'Georgy'
-`
+  font-family: Georgia;
+`;

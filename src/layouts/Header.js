@@ -1,22 +1,21 @@
 import React from 'react';
-import logo from '../logo.svg';
 import styled from 'styled-components';
-import { social, elevation, fixed, serif } from '../utilities';
+import logo from '../logo.svg';
+import { purple, elevation, fixed } from '../utilities';
 
 const Header = ({ className }) => (
-			<header className={className}>
-				<img src={logo} alt="logo" className="logo"/>
-				Hello
-			</header>
+  <header className={className}>
+    <img src={logo} alt="logo" className="logo" />
+  </header>
 );
 
 export default styled(Header)`
-	background: ${social.facebook};
-	padding: 10px 5%;
-	${serif},
-	${fixed},
-	${elevation[3]}
-	.logo {
-		width: 300px;
-	}
-`
+  background: ${purple};
+  padding: 10px 5%;
+  width: 100%;
+  ${fixed()};
+  ${elevation[2]};
+  .logo {
+    width: 60px;
+  }
+`;
